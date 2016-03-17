@@ -8,8 +8,9 @@ RUN echo "listen_addresses='*'" >> /etc/postgresql/9.3/main/postgresql.conf
 
 EXPOSE 5432
 
-WORKDIR /opt/nodeproject
+WORKDIR /opt/nodeproject/nodejs/
 
-CMD service postgresql start && node server.js
+#CMD service postgresql start && node server.js
 
+CMD service postgresql start && /bin/bash
 
