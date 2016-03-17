@@ -28,7 +28,7 @@ req.on('data', function (prd) {
 
 
 
-var connectionString = process.env.DATABASE_URL || 'postgres://pgrole:pgrole@localhost:5432/pgdb';
+var connectionString = process.env.DATABASE_URL || 'postgres://pgrole:pgrole@pg:5432/pgdb';
 var client = new pg.Client(connectionString);
 
 client.connect();
