@@ -5,11 +5,10 @@ services:
      build:
        context: ./docker/
        dockerfile: nodedockerfile
-       
      volumes:
        - ./nodejs/:/opt/nodeproject
-     expose:
-       - "5050"
+     ports:
+       - "5050:5050"
 
      command: /bin/bash
      #command: node /nodeapp/web/database.js && /bin/bash
