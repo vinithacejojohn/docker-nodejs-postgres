@@ -10,6 +10,5 @@ services:
      ports:
        - "5050:5050"
 
-     command: /bin/bash
-     #command: node /nodeapp/web/database.js && /bin/bash
-     tty: true
+     #command: /bin/bash
+     command: node server.js
