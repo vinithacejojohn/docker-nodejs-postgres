@@ -1,0 +1,16 @@
+version: '2'
+services:
+
+   nodetest:
+     build:
+       context: ./docker/
+       dockerfile: nodedockerfile
+       
+     volumes:
+       - ./nodejs/:/opt/nodeproject
+     expose:
+       - "5050"
+
+     command: /bin/bash
+     #command: node /nodeapp/web/database.js && /bin/bash
+     tty: true

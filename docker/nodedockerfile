@@ -1,0 +1,10 @@
+FROM node_postgre
+
+USER root
+
+WORKDIR /opt/nodeproject/
+
+EXPOSE 5050
+
+CMD /bin/bash
+
