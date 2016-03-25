@@ -1,4 +1,8 @@
-FROM node_postgre
+#FROM node_postgre
+
+FROM ubuntu:14.04
+
+RUN apt-get update && apt-get install node postgresql
 
 USER root
 
