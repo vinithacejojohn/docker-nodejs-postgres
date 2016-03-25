@@ -5,6 +5,7 @@ services:
      build:
        context: ./docker/
        dockerfile: nodedockerfile
+     image: node1
      volumes:
        - ./nodejs/:/opt/nodeproject
      ports:
