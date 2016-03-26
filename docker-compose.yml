@@ -11,5 +11,20 @@ services:
      ports:
        - "5050:5050"
 
-     #command: /bin/bash
      command: node server.js
+
+     links:
+        - pg
+#        environment:
+#             - PG_PORT=tcp://pg:5432
+     
+   pg:
+      build: 
+         context: ./docker/
+         dockerfile: pgdockerfile
+      image: postgres1
+      volumes:
+          - ./postgresql/:/var/lib/postgresql
+      command: service postgresql start && /bin/bash
+      expose:
+          - "5432"
