@@ -12,6 +12,8 @@ RUN echo "listen_addresses='*'" >> /etc/postgresql/9.3/main/postgresql.conf
 
 EXPOSE 5432
 
+EXPOSE 5050
+
 WORKDIR /opt/nodeproject
 
 USER postgres
