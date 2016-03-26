@@ -1,8 +1,8 @@
-#FROM node_postgre
+FROM node_postgre
 
-FROM ubuntu:14.04
+#FROM ubuntu:14.04
 
-RUN apt-get update && apt-get install node postgresql
+#RUN apt-get update && apt-get install node postgresql
 
 USER root
 
@@ -14,6 +14,4 @@ EXPOSE 5432
 
 WORKDIR /opt/nodeproject
 
-CMD service postgresql start && node server.js
-
-
+CMD chown -R postgres. /var/lib/postgresql/ && service postgresql start && node server.js
