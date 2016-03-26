@@ -1,31 +1,28 @@
 version: '2'
 services:
 
-#   nodetest:
-#     build:
-#       context: ./docker/
-#       dockerfile: nodedockerfile
-#     image: node1
-#     volumes:
-#       - ./nodejs/:/opt/nodeproject
-#     ports:
-#       - "5050:5050"
-#
-#     command: node server.js
-#
-#     links:
-#        - pg
-#        environment:
-#             - PG_PORT=tcp://pg:5432
+   nodetest:
+     build:
+       context: ./docker/
+       dockerfile: nodedockerfile
+     image: node1
+     volumes:
+       - ./nodejs/:/opt/nodeproject
+     ports:
+       - "5050:5050"
+     command: node server.js
+     links:
+        - pg
+     environment:
+             - PG_PORT=tcp://pg:5432
      
    pg:
-      build: 
+     build: 
          context: ./docker/
          dockerfile: pgdockerfile
-      image: postgres1
-      volumes:
-          - ./postgresql/:/var/lib/postgresql
-      command: service postgresql start && /bin/bash
-      tty: true
-      expose:
+     image: postgres1
+#      command: service postgresql start && /bin/bash
+#      command: /bin/bash
+     tty: true
+     expose:
           - "5432"
