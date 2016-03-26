@@ -14,4 +14,10 @@ EXPOSE 5432
 
 WORKDIR /opt/nodeproject
 
-CMD chown -R postgres. /var/lib/postgresql/ && service postgresql start && node server.js
+USER postgres
+
+
+RUN service postgresql start &&  psql -c "create database pgdb;" && psql -c "create role pgrole with login password 'pgrole'; grant all privileges on database pgdb to pgrole;"
+
+
+CMD service postgresql start  && node server.js
