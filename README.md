@@ -20,4 +20,4 @@ This nodejs application gives a web page where you can input data and it will be
 The current project works on a single docker container, our next step will be to put both NodeJS and Postgres server on different containers, similarly bring the dockercompose for a quick startup.
 
 ## Docker Image
-Currently we have used a custom image which conatins the binaries and configuration files of both NodeJS and PostgreSQL server packed into one. We'll be switching to a trusted base image soon.
+We have used a Ubuntu:14.04 as the base image.
